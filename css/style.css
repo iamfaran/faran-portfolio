@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+/* body {
+  position: relative;
+} */
+/* Making Nav Flex  */
+.nav-btn {
+  color: white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  position: fixed;
+  width: 100%;
+  padding: 1.5rem;
+  z-index: 1;
+}
+.content {
+  background-color: rgb(44, 44, 44);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation-name: bgColor;
+  animation-duration: 0.5s;
+  z-index: 2;
+}
+
+.nav-overlay-hide {
+  display: none;
+}
+@keyframes bgColor {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.9;
+  }
+}
+
+.nav-overlay ul {
+  list-style: none;
+}
+.nav-overlay li a {
+  color: white;
+  display: inline-block;
+  border: 1px solid yellow;
+  margin: 2rem;
+  font-size: 2.5rem;
+  padding: 1.5rem 3rem;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+.nav-overlay li a:hover {
+  z-index: 2;
+  color: black;
+}
+.nav-overlay li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  transform: translateY(-100%);
+  transition: all 0.8s;
+}
+
+.nav-overlay li a:hover::before {
+  transform: translateY(0);
+  z-index: -1;
+}
+
+.nav-close-btn {
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.heading {
+  font-size: 4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.2rem;
+}
+
+.text-white {
+  color: white;
+}
+
+.change-text {
+  color: yellow;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
+  animation-name: blinkText;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  font-size: 4rem;
+  z-index: -4;
+}
+@keyframes blinkText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.title-box {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 467px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+.img-box {
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 25rem;
+  height: 25rem;
+}
+
+.faran {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.about-btn {
+  padding: 1.5rem 3.5rem;
+  display: inline-block;
+  color: white;
+  font-size: 2.5rem;
+  text-decoration: none;
+  font-family: sans-serif;
+  border: 1px solid yellow;
+  margin-top: 2rem;
+}
+
+/* About section content */
+#about-sec {
+  height: 100vh;
+  background-color: #ffffff;
+}
+.about-text {
+  font-size: 3rem;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+}
+.about-sec-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.about-sec-card {
+  width: 45rem;
+  height: 50rem;
+  background-color: transparent;
+  border-radius: 2rem;
+  perspective: 1000px;
+  animation: pulse 1s infinite;
+  transition: transform 2s;
+}
+.about-sec-card:hover {
+  cursor: pointer;
+  animation: none;
+}
+/* animated card  starts */
+.coding-img-card {
+  position: relative;
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(24, 14, 14, 0.2);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-front {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  color: black;
+}
+.faran-bio {
+  font-family: "Lato", sans-serif;
+}
+.faran-bio h1 {
+  font-size: 3rem;
+}
+.faran-bio h1 span {
+  color: lightblue;
+  text-transform: uppercase;
+}
+.faran-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+}
+.faran-bio p {
+  font-size: 2rem;
+}
+.faran-bio p span {
+  color: lightblue;
+}
+
+.skills-btn {
+  align-self: center;
+}
+.skills-btn a {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 1.5rem;
+  color: #ffffff;
+  border: 1px solid lightblue;
+}
+
+.card-back {
+  border-radius: 2rem;
+  padding: 1rem;
+  background-color: rgb(44, 44, 44);
+  color: #ffffff;
+  transform: rotateY(180deg);
+}
+
+/* .about-sec-card:hover .coding-img-card {
+  transform: rotateY(180deg);
+} */
+/* animated card ends  */
+
+.coding-img {
+  width: 100%;
+  height: 100%;
+}
+/* CONTACT SECTIOn */
+#skills {
+  height: 100vh;
+  background-color: white;
+}
+
+/* Card pulse  */
+/* 
+.pulse {
+  display: block;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+.pulse:hover {
+  animation: none;
+} */
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(0, 225, 255, 0.4);
+    box-shadow: 0 0 0 0 rgba(0, 225, 225, 0.4);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 2rem rgba(236, 46, 20, 0);
+    box-shadow: 0 0 0 2rem rgba(247, 45, 10, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 44, 44, 0);
+  }
+}
+
+/* Card pulse Ends */
+/* About section */
+
+/* 
+
+.about-content-box {
+}
+
+*/
